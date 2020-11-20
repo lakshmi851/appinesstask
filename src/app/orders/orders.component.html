@@ -1,0 +1,105 @@
+
+<style>
+    .bg-img{
+    
+    background-image: url("https://fullyloaded.pizza/wp-content/uploads/2016/08/pizza-background.jpg");
+    
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
+  .menu_list li a:hover::before{
+  background: url("../assets/icon.png") no-repeat;
+}
+    </style>
+    <div class="bg-img"></div><div class="container-fluid">
+     <div class="row"> 
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <div class="header">
+      <ul class="menu_list">
+        <li><a routerLink='/pizzahome'>Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Order</a></li>
+        </ul>
+          </div>
+        </div>
+      </div> -->
+    <div class="row">
+       <div class="col-md-12">
+           <table class="table">
+               <thead>
+                   <tr>
+                      
+                   <th>customerName</th>
+                   <th>Number Of Items</th>
+                   <th>Total Amount</th>
+                   <th>Status</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                       <tr *ngFor="let x of customersList" >
+                           
+                           <td (click)="open(mymodal,x)">{{x.customerName}}</td>
+                           <td (click)="open(mymodal,x)">{{x.noOfItem}}</td>
+                           <td (click)="open(mymodal,x)">{{x.totalAmmount}}</td>
+                           <td><button class="btn btn_style color1" *ngIf="!x.hideRecive"  (click)="ChangeStatus(x,'Preparing')">Order Recieved<span class="glyphicon glyphicon-chevron-right"></span></button>
+                            <button class="btn btn_style color2" *ngIf="!x.hidePrepare" (click)="ChangeStatus(x,'Ready_to_serve')">Preparing<span class="glyphicon glyphicon-chevron-right"></span></button>
+                            <button class="btn btn_style color3" *ngIf="!x.hideReady" (click)="ChangeStatus(x,'Ready_to_serve')">Ready to serve</button>
+                          </td>
+
+                           </tr>
+                       </tbody>
+               </table>
+           </div>
+    </div>
+</div>
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title col-md-8 text-center" id="modal-basic-title">ORDERED DETAILS</h4>
+      <button type="button" class="close close_icon" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      
+      <table class="details table">
+        <tr>
+          <td>Name of the Customer</td><td>:</td><td>{{selectedCustomer.customerName}}</td>
+        </tr>
+        <tr >
+          <td>Items Names</td><td>:</td><td><label  *ngFor="let item of selectedCustomer.items">{{item.name}}--{{item.price}}Rs,</label></td>
+        </tr>
+        <!-- <tr>
+          <td>Price</td><td>:</td><td>{{item.price}}</td>
+        </tr> -->
+        <tr>
+          <td>Total Price</td><td>:</td><td>{{selectedCustomer.totalAmmount}}</td>
+        </tr>
+        <tr>
+          <td>Delivery Address</td><td>:</td><td>{{selectedCustomer.address}}</td>
+        </tr>
+        <!-- <li><label>Name of the Customer:</label>{{selectedCustomer.customerName}}</li>
+        <li class="listitems" *ngFor="let item of selectedCustomer.items">
+          <label>Items Names:</label>
+          <div class="details">
+              <div>{{item.name}}</div>
+              
+      
+    
+              </div>
+            </li>
+            <li><label>Price:</label>{{selectedCustomer.price}}</li>
+            <li><label>Total Price:</label>{{selectedCustomer.totalAmmount}}</li>
+      
+        <li><label>Delivery Address:</label>{{selectedCustomer.address}}</li> -->
+<!--  
+        <li>{{selectedCustomer.totalAmmount}}</li>
+        <li><select name="status"  class="form-control" [(ngModel)]="selectedCustomer.status">
+          <option *ngFor="let option of options" [value]="option.id" >{{option.value}}</option>
+      </select></li> -->
+    </table>  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark ok-btn" (click)="modal.close('Save click')">Ok</button>
+    </div>
+  </ng-template>

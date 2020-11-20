@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.fade{
+    opacity: 1 !important;
+}
+.modal-backdrop{
+    &.fade{
+        opacity: 0.6 !important;
+    }
+}
+.modal-dialog {
+  
+    margin: 190px auto;
+}

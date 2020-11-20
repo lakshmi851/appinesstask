@@ -1,0 +1,98 @@
+[
+    {
+      "id": 1,
+      "customerName": "John",
+      "noOfItem": 2,
+      "totalAmmount": 300,
+      "items": [
+        {
+          "name": "Corn Pizza",
+          "price": 150
+        },
+        {
+          "name": "Paneer Pizza",
+          "price": 150
+        }
+      ],
+      "address": "No:12 nehru street chennai-600124",
+      "status": "Order_Recieved"
+    },
+    {
+      "id": 2,
+      "customerName": "Smith",
+      "noOfItem": 1,
+      "totalAmmount": 200,
+      "items": [
+        {
+          "name": "Chicken Pizza",
+          "price": 200
+        }
+        
+      ],
+      "address": "No:12 nehru street chennai-600124",
+      "status":"Order_Recieved"
+    },
+    {
+      "id": 3,
+      "customerName": "Robert",
+      "noOfItem": 6,
+      "totalAmmount": 1100,
+      "items": [
+        {
+          "name": "Olive Pizza",
+          "price": 500
+        },
+        {
+          "name": "Veg Pizza",
+          "price": 300
+        },
+        {
+          "name": "potato Pizza",
+          "price": 300
+        }
+      ],
+      "address": "No:12 nehru street chennai-600124",
+      "status" :"Order_Recieved"
+    },
+    {
+      "id": 4,
+      "customerName": "hellen",
+      "noOfItem": 2,
+      "totalAmmount": 1600,
+      "items": [
+        {
+          "name": "Spicy Pizza",
+          "price": 400
+        },
+        {
+          "name": "Tomato Pizza",
+          "price": 400
+        },
+        {
+          "name": "Onion Pizza",
+          "price": 400
+        },
+        {
+          "name": "Mirchi Pizza",
+          "price": 400
+        }
+      ],
+      "address": "No:12 nehru street chennai-600124",
+      "status":"Order_Recieved"
+    },
+    {
+        "id": 2,
+        "customerName": "Ibrahim",
+        "noOfItem": 1,
+        "totalAmmount": 300,
+        "items": [
+          {
+            "name": "Egg Pizza",
+            "price": 180
+          }
+          
+        ],
+        "address": "No:12 nehru street chennai-600124",
+        "status":"Order_Recieved"
+      }
+  ]
